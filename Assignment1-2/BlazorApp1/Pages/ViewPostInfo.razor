@@ -1,0 +1,120 @@
+@page "/ViewPostInfo/{id:int}"
+
+@using Domain.DTOs
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@using System.Security.Claims
+@inject IPostService postService
+@inject ICommentService commentService
+@inject NavigationManager navMgr
+
+<div class="card">
+    @if (dto == null)
+    {
+        <label>Loading post data..</label>
+    }
+    else
+    {
+        <h3>View Post</h3>
+        <label>Title: </label>@dto.Title
+        <label>Author: </label> @dto.OwnerName
+        <label>Body: </label> @dto.Body
+        <AuthorizeView>
+            <Authorized>
+                 <div class="form-group field">
+                          <input type="text" @bind="commentMsg" placeholder="Comment as @name"/>
+                        </div>
+                        <button @onclick="@CreateComment">Post</button>
+                             @if (!string.IsNullOrEmpty(errorMsg))
+                             {
+                                 <label style="color: red">@errorMsg</label>
+                             }
+            </Authorized>
+        </AuthorizeView>
+        <button @onclick="@ShowComments">See comments</button>
+    }
+</div>
+
+<Modal style="display:@showModalSeeComments">
+    <table class="table">
+           <thead>
+           <tr>
+               <th>Author</th>
+               <th>Comment</th>
+           </tr>
+           </thead>
+           <tbody>
+    @foreach (var item in comments)
+            {
+                <tr>
+                    <td>@item.Owner.UserName</td>
+                    <td>@item.Message</td>
+                    </tr>
+            }
+           </tbody></table>
+</Modal>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+
+    private string? name;
+    private bool isLoggedIn;
+    private PostBasicDto dto = null!;
+    private string commentMsg="";
+    private string showModalSeeComments="none";
+    private string errorMsg = "";
+    private ICollection<Comment?> comments=new List<Comment>();
+    
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        errorMsg = "";
+        try
+        {
+            dto = await postService.GetByIdAsync(Id);
+            comments =  await commentService.GetByPostAsync(Id);
+            
+            AuthenticationState authState = await AuthState;
+            ClaimsPrincipal user = authState.User;
+            isLoggedIn = user.Identity != null;
+        
+            if (!isLoggedIn) return;
+        
+            name = user.Identity!.Name!;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorMsg = e.Message;
+        }
+    }
+
+    private async void ShowComments()
+    {
+        comments =  await commentService.GetByPostAsync(Id);
+        showModalSeeComments = "initial";
+    }
+    
+  
+    private void CreateComment()
+    { 
+        try
+        {
+           
+            CommentCreationDto dto = new CommentCreationDto(name, Id, commentMsg);
+            commentService.CreateAsync(dto);
+            errorMsg = "comment sucessfully created";
+            commentMsg = "";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            errorMsg = e.Message;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@attribute [Authorize]
+@page "/CreatePost"
+@using HttpClients.ClientInterfaces
+@using Domain.DTOs
+@using System.Security.Claims
+
+
+@inject IPostService postService
+@inject NavigationManager navMgr
+
+<div class="card">
+   
+    <h3>Create Post</h3>
+    @name
+    <div class="form-group field">
+        <label>Title:</label>
+        <input type="text" @bind="postTitle"/>
+        <label>Body:</label>
+        <input type="text" @bind="postBody"/>
+    </div>
+    
+    <div class="button-row">
+        @if (!string.IsNullOrEmpty(msg))
+        {
+            <label style="color: red">@msg</label>
+        }
+        <button @onclick="Create" class="acceptbtn">Create</button>
+    </div>
+</div>
+<Modal style="display:@showModal">
+    <p>You have successfully created a new post.</p>
+    <button @onclick="@Proceed">Wonderful</button>
+</Modal>
+
+@code {
+    
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+
+    private string? name;
+    private bool isLoggedIn;
+    private string postTitle = "";
+    private string postBody="";
+    private string showModal="";
+    
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        msg = "";
+        showModal = "none";
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        isLoggedIn = user.Identity != null;
+        
+        if (!isLoggedIn) return;
+        
+        name = user.Identity!.Name!;
+    }
+
+    private void Proceed()
+    {
+        showModal = "none";
+        navMgr.NavigateTo("/ViewPosts");
+    }
+    private async Task Create()
+    {
+        msg = "";
+        
+        if (string.IsNullOrEmpty(postTitle))
+        {
+            msg = "Title cannot be empty!";
+            return;
+        }
+
+        try
+        {
+            PostCreationDto dto = new(name,postTitle,postBody );
+            await postService.CreateAsync(dto);
+            postTitle = "";
+            postBody="";
+            showModal ="initial";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+}

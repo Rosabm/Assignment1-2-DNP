@@ -1,0 +1,64 @@
+@page "/CreateUser"
+@using HttpClients.ClientInterfaces
+@using Domain.DTOs
+@inject IAuthService authService
+@inject NavigationManager navMgr
+
+<h3>CreateUser</h3>
+ 
+    <div class="form-group field">
+        <div><label>User name:</label>
+        <input type="text" @bind="username" @bind:event="oninput"/>
+        </div>
+        <div>
+         <label>Password:</label>
+                <input type="text" @bind="password" @bind:event="oninput"/>
+                @if (!string.IsNullOrEmpty(resultMsg))
+                {
+                    <label style="color: @color">@resultMsg</label>
+                }</div>
+    </div>
+<div class="button-row">
+    <button @onclick="Create" class="acceptbtn">Create</button>
+    
+    <Modal style="display:@showModal">
+        <button @onclick="@Proceed">Wonderful</button>
+    </Modal>
+</div>
+
+@code {
+    private string username = "";
+    private string password = "";
+    private string resultMsg = "";
+    private string color = "";
+    private string showModal="none";
+    private string errorLabel;
+    
+    private async Task Create()
+    {
+        resultMsg = "";
+
+        try
+        {
+            await authService.RegisterAsync(new UserCreationDto(username,password));
+            username = "";
+            password = "";
+            resultMsg = "User successfully created";
+            color = "green";
+            showModal ="initial";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+    
+    private void Proceed()
+    {
+        showModal = "none";
+        navMgr.NavigateTo("/Index");
+    }
+    
+    }

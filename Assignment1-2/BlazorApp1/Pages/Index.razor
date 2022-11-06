@@ -1,0 +1,19 @@
+﻿@page "/"
+@using System.Security.Claims
+
+<PageTitle>Index</PageTitle>
+
+<h1>Reddit</h1>
+(kinda)
+
+<br/>
+<br/>
+<h3>Welcome to my assignment!!.</h3>
+
+<AuthorizeView>
+    <Authorized>
+        <br/>
+        <br/>
+        <h5>Hello @context.User.Identity?.Name :)</h5>
+    </Authorized>
+</AuthorizeView>

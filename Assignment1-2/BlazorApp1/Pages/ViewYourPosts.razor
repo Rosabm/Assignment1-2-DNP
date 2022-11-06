@@ -1,0 +1,106 @@
+@attribute [Authorize]
+@page "/ViewYourPosts"
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@using System.Security.Claims
+@inject IPostService postService
+@inject NavigationManager navMgr
+
+<h3>My posts</h3>
+
+
+<div>
+    <button @onclick="LoadPosts">Load</button>
+</div>
+
+@if (posts == null)
+{
+}
+else if (!posts.Any())
+{
+    <p>No posts to display</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>See post</th>
+            <th>Delete?</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in posts)
+        {
+            <tr>
+                <td>@item.Title</td>
+                 <td><img src="icons/lupa.png" @onclick="@(() => navMgr.NavigateTo($"/ViewPostInfo/{item.Id}"))" style="width:30px;
+                                                                                                                            height:30px;"/></td>
+                <td>
+                    <label @onclick="@(() => RemovePost(item.Id))" style="cursor:pointer; color: red; font-weight: bold"> &#x2717;
+                    </label>
+                    </td>
+            
+                </tr>
+        }
+        </tbody>
+    </table>
+}
+@if (!string.IsNullOrEmpty(msg))
+{
+    <label style="color: red">@msg</label>
+}
+@code {
+    
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; } = null!;
+
+    private IEnumerable<Post>? posts;
+    private string msg = "";
+    private bool doShowFilters = false;
+    private string? username;
+    private bool isLoggedIn;
+
+    protected override async Task OnInitializedAsync()
+    {
+        msg = "";
+        AuthenticationState authState = await AuthState;
+        ClaimsPrincipal user = authState.User;
+        isLoggedIn = user.Identity != null;
+        
+        if (!isLoggedIn) return;
+        
+        username = user.Identity!.Name!;
+    }
+    private async Task LoadPosts()
+    {
+        try
+        {
+            posts = await postService.GetAsync(username, null);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+    
+    private async Task RemovePost(int id)
+    {
+        msg = "";
+        try
+        {
+            await postService.DeleteAsync(id);
+        
+            var list = new List<Post>(posts!);
+            list.RemoveAll(post => post.Id == id);
+            posts = list.AsEnumerable();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+}

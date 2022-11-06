@@ -1,0 +1,20 @@
+﻿<CascadingAuthenticationState>
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+       <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+           <NotAuthorized>
+               <img width="600" src="https://media0.giphy.com/media/njYrp176NQsHS/giphy.gif"/>
+               <p>This is to good not to add it. You know it and I know it so let's keep going and pretend is my original idea :)</p>
+               <p>Log in first </p>
+           </NotAuthorized>
+       </AuthorizeRouteView> 
+        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+</CascadingAuthenticationState>

@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "UserName": "rosabm",
+      "Password": "fghjg"
+    },
+    {
+      "UserName": "user1",
+      "Password": "sdfghjk"
+    },
+    {
+      "UserName": "sdfhjkl",
+      "Password": "asdfghjk"
+    },
+    {
+      "UserName": "rafa",
+      "Password": "1234"
+    },
+    {
+      "UserName": "pepito",
+      "Password": "perez"
+    }
+  ],
+  "posts": [
+    {
+      "Id": 3,
+      "Title": "my first post",
+      "Body": "yhgtrcexsz",
+      "Owner": {
+        "UserName": "rosabm",
+        "Password": "fghjg"
+      }
+    },
+    {
+      "Id": 6,
+      "Title": "zxcvbn",
+      "Body": "sdfghj",
+      "Owner": {
+        "UserName": "rosabm",
+        "Password": "fghjg"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "Id": 1,
+      "PostId": 3,
+      "Message": "string",
+      "Owner": {
+        "UserName": "rosabm",
+        "Password": "fghjg"
+      }
+    },
+    {
+      "Id": 2,
+      "PostId": 3,
+      "Message": "sdcfgbhjmk,l\u00F1,r",
+      "Owner": {
+        "UserName": "rosabm",
+        "Password": "fghjg"
+      }
+    },
+    {
+      "Id": 3,
+      "PostId": 3,
+      "Message": "dcfvgbhjnmk,",
+      "Owner": {
+        "UserName": "rafa",
+        "Password": "1234"
+      }
+    }
+  ]
+}

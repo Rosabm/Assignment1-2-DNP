@@ -1,0 +1,10 @@
+// log in as Rosa
+POST https://localhost:7140/auth/login
+Content-Type: application/json
+
+{ "Username" : "rosabm", "Password" : "fghjg" }
+
+###
+
+GET https://localhost:7140/test/authorized
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIxYzI5YWUyNC00MmVkLTRmZWYtOThlMS03YmZhNTZkZjI4Y2MiLCJpYXQiOiIwNS8xMS8yMDIyIDg6MDc6NDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoicm9zYWJtIiwiZXhwIjoxNjY3NjM5MjY1LCJpc3MiOiJKV1RBdXRoZW50aWNhdGlvblNlcnZlciIsImF1ZCI6IkpXVFNlcnZpY2VCbGF6b3JXYXNtQ2xpZW50In0.P1eXW6FYOfJtQ-gtg08im4VD596FMhe6y-d6MadTRXdsmcmETbUXB6um7kuVoD_QEsT2zmpydexxZ4AcKNJPRg
