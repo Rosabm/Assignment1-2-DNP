@@ -1695,11 +1695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
+      "projectUniqueName": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
       "projectName": "BlazorApp1",
-      "projectPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
+      "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
       "packagesPath": "C:\\Users\\rosab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\BlazorApp1\\obj\\",
+      "outputPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\BlazorApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rosab\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1714,8 +1714,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\HttpClients\\HttpClients.csproj": {
-              "projectPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\HttpClients\\HttpClients.csproj"
+            "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\HttpClients\\HttpClients.csproj": {
+              "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\HttpClients\\HttpClients.csproj"
             }
           }
         }

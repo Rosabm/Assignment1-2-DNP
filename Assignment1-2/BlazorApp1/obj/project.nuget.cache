@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nv/OEsRpUI4qMx95EsojV/U3nNg+Rhv1usE+EesaH/DpYK5k8l5gafxsbUFcdNXdiIWVsy+2tzEuW59nkty77w==",
+  "dgSpecHash": "Ghhg2TD8W6Gykb+aDCW7YEHjv4Df36PZhYfvlxxxmD6m5FBjaKSXWj04JqcZ3uFslK2IElhCeltLdo9mRu5ZGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
+  "projectFilePath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rosab\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0-rc.2.22476.2\\microsoft.aspnetcore.authorization.7.0.0-rc.2.22476.2.nupkg.sha512",
     "C:\\Users\\rosab\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.8\\microsoft.aspnetcore.components.6.0.8.nupkg.sha512",

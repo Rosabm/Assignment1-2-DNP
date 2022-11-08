@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj": {}
+    "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj": {
+    "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\rosab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rosab\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -59,6 +59,15 @@
         "UserName": "rosabm",
         "Password": "fghjg"
       }
+    },
+    {
+      "Id": 3,
+      "PostId": 3,
+      "Message": "dcfvgbhjnmk,",
+      "Owner": {
+        "UserName": "rafa",
+        "Password": "1234"
+      }
     }
   ]
 }

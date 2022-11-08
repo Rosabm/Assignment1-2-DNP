@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ZwDu0I9djLuwqCov6AjcdymG4y6+8VrH02OLYj5i9U76lMqSOh31Q6Uloy0CWenfgei3SjBEg5VQNtl1rQ97Q==",
+  "dgSpecHash": "tFsAO+MzgP3ue3I6RnAnjkGGqfFvQr6tjSUSeK8dhkqB2PPOdX5qmUDEvuthIUgyLS6SFbeMhH6aBdppQiKrOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\HttpClients\\HttpClients.csproj",
+  "projectFilePath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\HttpClients\\HttpClients.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rosab\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0-rc.2.22476.2\\microsoft.aspnetcore.authorization.7.0.0-rc.2.22476.2.nupkg.sha512",
     "C:\\Users\\rosab\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.0-rc.2.22476.2\\microsoft.aspnetcore.metadata.7.0.0-rc.2.22476.2.nupkg.sha512",

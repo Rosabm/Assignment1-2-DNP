@@ -29,6 +29,9 @@
                              {
                                  <label style="color: red">@errorMsg</label>
                              }
+                              @if (!string.IsNullOrEmpty(@resultMsg))
+                              {<label style="color: green">@resultMsg</label>
+                              }
             </Authorized>
         </AuthorizeView>
         <button @onclick="@ShowComments">See comments</button>
@@ -67,6 +70,7 @@
     private string commentMsg="";
     private string showModalSeeComments="none";
     private string errorMsg = "";
+    private string resultMsg = "";
     private ICollection<Comment?> comments=new List<Comment>();
     
 
@@ -108,7 +112,7 @@
            
             CommentCreationDto dto = new CommentCreationDto(name, Id, commentMsg);
             commentService.CreateAsync(dto);
-            errorMsg = "comment sucessfully created";
+            resultMsg = "comment sucessfully created";
             commentMsg = "";
         }
         catch (Exception e)

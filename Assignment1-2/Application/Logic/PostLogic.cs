@@ -66,7 +66,8 @@ public class PostLogic:IPostLogic
         {
             throw new Exception($"Post with ID {id} was not found!");
         }
-        
+        //here i want to check if there are any comments associated to this post and delete them
+        //I'll do it eventually :)
         await postDao.DeleteAsync(id);
     }
    

@@ -343,11 +343,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\rosab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Application\\obj\\",
+      "outputPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rosab\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -362,8 +362,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\rosab\\RiderProjects\\Assignment1-2\\Domain\\Domain.csproj"
+            "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Domain\\Domain.csproj"
             }
           }
         }
