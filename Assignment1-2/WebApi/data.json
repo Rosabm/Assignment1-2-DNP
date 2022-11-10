@@ -72,6 +72,15 @@
         "UserName": "Ana",
         "Password": "password"
       }
+    },
+    {
+      "Id": 6,
+      "PostId": 2,
+      "Message": "hellloooooo",
+      "Owner": {
+        "UserName": "rosabm",
+        "Password": "fghjg"
+      }
     }
   ]
 }
