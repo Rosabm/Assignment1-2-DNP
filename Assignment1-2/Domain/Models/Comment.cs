@@ -4,16 +4,18 @@ public class Comment
 {
  
     public int Id { get; set; }
-    public int PostId{ get; set; }
+    public Post Post{ get; set; }
     public string Message { get; set; }
-    public User Owner { get; }
+    public User Owner { get; private set; }
     
-       public Comment( User owner,int postId, string message)
+       public Comment( User owner,Post post, string message)
         {
-            PostId = postId;
+            Post = post;
             Message = message;
             Owner = owner;
         }
+       
+       private Comment(){}
 
     
 }

@@ -2,8 +2,8 @@ using System.Text;
 using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
-using FileData;
-using FileData.DAOs;
+using EfcDataAccess;
+using EfcDataAccess.DAOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Services;
@@ -17,13 +17,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<FileContext>();
-builder.Services.AddScoped<IUserDao, UserFileDao>();
+builder.Services.AddDbContext<EfcContext>();
+builder.Services.AddScoped<IUserDao, UserEfcDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ICommentDao, CommentFileDao>();
+builder.Services.AddScoped<ICommentDao, CommentEfcDao>();
 builder.Services.AddScoped<ICommentLogic, CommentLogic>();
-builder.Services.AddScoped<IPostDao, PostFileDao>();
+builder.Services.AddScoped<IPostDao, PostEfcDao>();
 builder.Services.AddScoped<IPostLogic, PostLogic>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

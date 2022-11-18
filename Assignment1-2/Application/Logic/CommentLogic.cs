@@ -9,11 +9,13 @@ public class CommentLogic: ICommentLogic
 {
     private readonly ICommentDao commentDao;
     private readonly IUserDao userDao;
+    private readonly IPostDao postDao;
 
-    public CommentLogic(ICommentDao commentDao, IUserDao userDao)
+    public CommentLogic(ICommentDao commentDao, IUserDao userDao, IPostDao postDao)
     {
         this.commentDao = commentDao;
         this.userDao = userDao;
+        this.postDao = postDao;
     }
 
     public async Task<Comment> CreateAsync(CommentCreationDto dto)
@@ -23,8 +25,12 @@ public class CommentLogic: ICommentLogic
         {
             throw new Exception($"User with username {dto.OwnerUsername} was not found.");
         }
-        
-        Comment toCreate = new Comment(user,dto.PostId,dto.Message);
+        Post? post = await postDao.GetByIdAsync(dto.PostId);
+        if (post == null)
+        {
+            throw new Exception($"Post with id {dto.PostId} was not found.");
+        }
+        Comment toCreate = new Comment(user,post,dto.Message);
         Comment created = await commentDao.CreateAsync(toCreate);
         return created;
     }

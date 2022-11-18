@@ -120,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\FileData.csproj": {
+    "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\EfcDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\FileData.csproj",
-        "projectName": "FileData",
-        "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\FileData.csproj",
+        "projectUniqueName": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\EfcDataAccess.csproj",
+        "projectName": "EfcDataAccess",
+        "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\EfcDataAccess.csproj",
         "packagesPath": "C:\\Users\\rosab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\obj\\",
+        "outputPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rosab\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -157,6 +157,22 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -202,8 +218,8 @@
               "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Application\\Application.csproj": {
                 "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\Application\\Application.csproj"
               },
-              "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\FileData.csproj": {
-                "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\FileData\\FileData.csproj"
+              "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\EfcDataAccess.csproj": {
+                "projectPath": "C:\\Users\\rosab\\OneDrive\\Escritorio\\Software Engineering\\DNP\\Assignment1-2\\Assignment1-2-DNP\\Assignment1-2\\EfcDataAccess\\EfcDataAccess.csproj"
               }
             }
           }

@@ -39,7 +39,7 @@ public class CommentFileDao : ICommentDao
     {
            // we know postId is unique
            IEnumerable<Comment> result = context.Comments.Where(c =>
-                c.PostId == postId);
+                c.Post.Id == postId);
            return Task.FromResult(result);
     }
 }

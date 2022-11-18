@@ -9,7 +9,6 @@ namespace WebApi.Controllers;
 
 [ApiController]
 [Route("users")]
-[Authorize]
 public class UserController: ControllerBase
 {
     private readonly IUserLogic userLogic;
